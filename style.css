@@ -1,38 +1,38 @@
-const siteContent = {
-  siteTitle: "SiteCraft",
-  links: {
-    home: "Home",
-    themes: "Themes",
-    pricing: "Pricing",
-    contact: "Contact"
+{
+  "siteTitle": {"text":"SiteCraft", "color":"#00b4ff"},
+  "links": {
+    "home": {"text":"Home"},
+    "themes": {"text":"Themes"},
+    "pricing": {"text":"Pricing"},
+    "contact": {"text":"Contact"}
   },
-  hero: {
-    title: "Craft Powerful <span>Websites</span>",
-    desc: "Premium website themes designed for speed, beauty, and performance.",
-    btnBrowse: "Browse Themes",
-    btnDemo: "View Demo"
+  "hero": {
+    "title":{"text":"Craft Powerful <span>Websites</span>"},
+    "desc":{"text":"Premium website themes designed for speed, beauty, and performance."},
+    "btnBrowse":{"text":"Browse Themes"},
+    "btnDemo":{"text":"View Demo"}
   },
-  features: {
-    title: "Why SiteCraft?",
-    items: [
-      {title: "⚡ Fast Performance", desc: "Optimized code for speed."},
-      {title: "🎨 Modern UI", desc: "Clean and premium designs."},
-      {title: "🛠 Easy Customize", desc: "No coding needed."},
-      {title: "📱 Responsive", desc: "Perfect on all devices."}
+  "features": {
+    "title":{"text":"Why SiteCraft?"},
+    "items":[
+      {"title":{"text":"⚡ Fast Performance","color":"#00b4ff"},"desc":{"text":"Optimized code for speed."}},
+      {"title":{"text":"🎨 Modern UI","color":"#00b4ff"},"desc":{"text":"Clean and premium designs."}},
+      {"title":{"text":"🛠 Easy Customize","color":"#00b4ff"},"desc":{"text":"No coding needed."}},
+      {"title":{"text":"📱 Responsive","color":"#00b4ff"},"desc":{"text":"Perfect on all devices."}}
     ]
   },
-  info: {
-    title: "Why SiteCraft Matters",
-    desc: "Launch professional websites faster with ready-made themes crafted for creators.",
-    btnExplore: "Explore Collection"
+  "info": {
+    "title":{"text":"Why SiteCraft Matters"},
+    "desc":{"text":"Launch professional websites faster with ready-made themes crafted for creators."},
+    "btnExplore":{"text":"Explore Collection"}
   },
-  pricing: {
-    title: "Theme Pricing",
-    items: [
-      {title: "Starter", amount: "₹499", desc: "Single theme + updates"},
-      {title: "Pro", amount: "₹999", desc: "Multiple pages + support"},
-      {title: "Bundle", amount: "₹1999", desc: "All themes + lifetime updates"}
+  "pricing": {
+    "title":{"text":"Theme Pricing"},
+    "items":[
+      {"title":{"text":"Starter"},"amount":{"text":"₹499"},"desc":{"text":"Single theme + updates"}},
+      {"title":{"text":"Pro"},"amount":{"text":"₹999"},"desc":{"text":"Multiple pages + support"}},
+      {"title":{"text":"Bundle"},"amount":{"text":"₹1999"},"desc":{"text":"All themes + lifetime updates"}}
     ]
   },
-  footer: "© 2025 SiteCraft.top – All rights reserved"
-};
+  "footer":{"text":"© 2025 SiteCraft.top – All rights reserved"}
+                 }
