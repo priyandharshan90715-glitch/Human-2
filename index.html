@@ -56,50 +56,55 @@
 
 <footer id="footerText"></footer>
 
-<script src="content.js"></script>
 <script>
-  // Load content from content.js
-  document.getElementById('siteTitle').innerText = siteContent.siteTitle;
-  document.getElementById('linkHome').innerText = siteContent.links.home;
-  document.getElementById('linkThemes').innerText = siteContent.links.themes;
-  document.getElementById('linkPricing').innerText = siteContent.links.pricing;
-  document.getElementById('linkContact').innerText = siteContent.links.contact;
+fetch('content.json')
+  .then(response => response.json())
+  .then(content => {
+    // Site title
+    const siteTitle = document.getElementById('siteTitle');
+    siteTitle.innerHTML = content.siteTitle.text;
+    if(content.siteTitle.color) siteTitle.style.color = content.siteTitle.color;
 
-  document.getElementById('heroTitle').innerHTML = siteContent.hero.title;
-  document.getElementById('heroDesc').innerText = siteContent.hero.desc;
-  document.getElementById('btnBrowse').innerText = siteContent.hero.btnBrowse;
-  document.getElementById('btnDemo').innerText = siteContent.hero.btnDemo;
+    // Drawer links
+    document.getElementById('linkHome').innerText = content.links.home.text;
+    document.getElementById('linkThemes').innerText = content.links.themes.text;
+    document.getElementById('linkPricing').innerText = content.links.pricing.text;
+    document.getElementById('linkContact').innerText = content.links.contact.text;
 
-  document.getElementById('featuresTitle').innerText = siteContent.features.title;
-  document.getElementById('feature1Title').innerText = siteContent.features.items[0].title;
-  document.getElementById('feature1Desc').innerText = siteContent.features.items[0].desc;
-  document.getElementById('feature2Title').innerText = siteContent.features.items[1].title;
-  document.getElementById('feature2Desc').innerText = siteContent.features.items[1].desc;
-  document.getElementById('feature3Title').innerText = siteContent.features.items[2].title;
-  document.getElementById('feature3Desc').innerText = siteContent.features.items[2].desc;
-  document.getElementById('feature4Title').innerText = siteContent.features.items[3].title;
-  document.getElementById('feature4Desc').innerText = siteContent.features.items[3].desc;
+    // Hero
+    document.getElementById('heroTitle').innerHTML = content.hero.title.text;
+    document.getElementById('heroDesc').innerText = content.hero.desc.text;
+    document.getElementById('btnBrowse').innerText = content.hero.btnBrowse.text;
+    document.getElementById('btnDemo').innerText = content.hero.btnDemo.text;
 
-  document.getElementById('infoTitle').innerText = siteContent.info.title;
-  document.getElementById('infoDesc').innerText = siteContent.info.desc;
-  document.getElementById('btnExplore').innerText = siteContent.info.btnExplore;
+    // Features
+    document.getElementById('featuresTitle').innerText = content.features.title.text;
+    content.features.items.forEach((item, index) => {
+      document.getElementById(`feature${index+1}Title`).innerText = item.title.text;
+      document.getElementById(`feature${index+1}Desc`).innerText = item.desc.text;
+      if(item.title.color) document.getElementById(`feature${index+1}Title`).style.color = item.title.color;
+    });
 
-  document.getElementById('pricingTitle').innerText = siteContent.pricing.title;
-  document.getElementById('price1Title').innerText = siteContent.pricing.items[0].title;
-  document.getElementById('price1Amount').innerText = siteContent.pricing.items[0].amount;
-  document.getElementById('price1Desc').innerText = siteContent.pricing.items[0].desc;
-  document.getElementById('price2Title').innerText = siteContent.pricing.items[1].title;
-  document.getElementById('price2Amount').innerText = siteContent.pricing.items[1].amount;
-  document.getElementById('price2Desc').innerText = siteContent.pricing.items[1].desc;
-  document.getElementById('price3Title').innerText = siteContent.pricing.items[2].title;
-  document.getElementById('price3Amount').innerText = siteContent.pricing.items[2].amount;
-  document.getElementById('price3Desc').innerText = siteContent.pricing.items[2].desc;
+    // Info
+    document.getElementById('infoTitle').innerText = content.info.title.text;
+    document.getElementById('infoDesc').innerText = content.info.desc.text;
+    document.getElementById('btnExplore').innerText = content.info.btnExplore.text;
 
-  document.getElementById('footerText').innerText = siteContent.footer;
-  
-  function toggleDrawer(){
-    document.getElementById("drawerMenu").classList.toggle("open");
-  }
+    // Pricing
+    document.getElementById('pricingTitle').innerText = content.pricing.title.text;
+    content.pricing.items.forEach((item, index) => {
+      document.getElementById(`price${index+1}Title`).innerText = item.title.text;
+      document.getElementById(`price${index+1}Amount`).innerText = item.amount.text;
+      document.getElementById(`price${index+1}Desc`).innerText = item.desc.text;
+    });
+
+    // Footer
+    document.getElementById('footerText').innerText = content.footer.text;
+  });
+
+function toggleDrawer(){
+  document.getElementById("drawerMenu").classList.toggle("open");
+}
 </script>
 </body>
 </html>
